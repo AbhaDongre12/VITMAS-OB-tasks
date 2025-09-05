@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Details</title>
+        <link rel="stylesheet" href="deco.css">
+    </head>
+    <body>
+        <h1>Details</h1>
+        <p>Full Name: <span id="fullname"></span></p>
+        <p>Registration Number: <span id="regno"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Branch: <span id="branch"></span></p>
+        <script>
+            const token = localStorage.getItem('vitmasToken'); 
+            if(!token){
+                alert('You must be logged in');
+                window.location.href='login.html';
+            } 
+            fetch('http://localhost:5000/api/auth/me',{
+                headers: {Authorization:'Bearer '+token}
+            })
+            .then(res=>{
+                if(!res.ok) throw new Error('Unauthorized');
+                return res.json();
+            })
+            .then(user=>{
+                document.getElementById('fullname').innerText=user.fullname;
+                document.getElementById('regno').innerText=user.regno;
+                document.getElementById('email').innerText=user.email;
+                document.getElementById('branch').innerText=user.branch;
+            })
+            .catch(()=>{
+                alert('Session expired. Please login again.');
+                localStorage.removeItem('vitmasToken');
+                window.location.href='login.html';
+            });
+        </script>
+    </body>
+</html>
