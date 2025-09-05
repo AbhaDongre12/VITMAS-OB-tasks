@@ -1,0 +1,56 @@
+body{
+    font-family: Arial;
+    background-color: lemonchiffon;
+}
+h2 {
+    color: blueviolet;
+}
+p {
+    font-family: sans-serif;
+    color: blue;
+    font-size: 20px;
+    font-style: italic;
+}
+h1 {
+    font-size: 50px;
+    font-style: bold;
+    color: maroon;
+    text-align: center;
+}
+ul {
+    font-size: 25px;
+    font-family: Calibri;
+    color: green;
+}
+li {
+    font-size: 20px;
+    font-family: Calibri;
+    color: green;
+}
+form {
+    background-color: lightblue ;
+}
+label {
+    font-size: 20px;
+    font-family: Calibri;
+    color: brown;
+}
+button,
+input[type="submit"] {
+    background-color: tomato;
+    color: aliceblue;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+}
